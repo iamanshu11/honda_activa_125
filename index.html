@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Honda</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid d-flex align-items-center p-0">
+      <div class="honda-logo-container d-flex align-items-center justify-content-center">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" class="img-fluid" alt="Honda Logo">
+        </a>
+      </div>
+      <div class="honda-red-bar flex-grow-1"></div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero hero-sec section dark-background">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-7">
+            <div class="desk-img">
+              <img src="assets/img/blue-activa.png" class="img-fluid ">
+            </div>
+            <div class="mob-img">
+              <img src="assets/img/blue.png" class="img-fluid ">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <form action="" method="post" class="custom-form">
+              <h2>Get in touch with us</h2>
+              <p>Please fill in your details</p>
+              <div class="row gap-gp ">
+                <div class="col-md-12 mar-f-desk">
+                  <input type="text" name="name" class="form-control" placeholder="Name" required="">
+                </div>
+                <div class="col-md-12 mar-f-desk ">
+                  <div class="input-group">
+                    <span class="input-group-text">
+                      <img src="assets/img/india.png" alt="India Flag" style="width: 20px;">
+                      +91
+                    </span>
+                    <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
+                  </div>
+                  <!-- Mobile only Get OTP button -->
+                  <button type="button" class="btn btn-form-sec w-100 mt-2 d-md-none" id="get-otp-btn" data-bs-toggle="modal" data-bs-target="#otpModal">Get OTP</button>
+                </div>
+                <div class="col-md-12 mar-f-desk ">
+                  <select class="form-control" name="state" id="state" required>
+                    <option value="" disabled selected>Select State</option>
+                    <option value="maharashtra">Maharashtra</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="tamilnadu">Tamil Nadu</option>
+                  </select>
+
+                </div>
+                <div class="col-md-12 mar-f-desk ">
+                  <input type="text" class="form-control" name="city" id="city" placeholder="City" required>
+                </div>
+                <div class="col-md-12 mar-f-desk d-flex gap-2">
+                  <input type="text" class="form-control text-center" id="generated-captcha" name="captcha"
+                    placeholder="Captcha" readonly required>
+                  <input type="text" class="form-control" id="captcha-input" name="captcha-input"
+                    placeholder="Enter captcha here" required>
+                </div>
+                <div class="col-md-12 text-center mt-2">
+                  <span id="captcha-message" class="text-danger"></span>
+                </div>
+
+
+                <div class="col-md-12 mar-f-desk text-center ">
+                  <button type="submit" class="btn btn-danger w-100" id="submit-btn">Get in touch</button>
+                </div>
+                <div class="col-md-12">
+                  <input type="checkbox" name="terms" required="">
+                  <label for="terms">I agree to the <a href="https://www.honda2wheelersindia.com/disclaimer" target="_blank">Terms & Conditions</a></label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="missed-call-popup" class="missed-call-box">
+      <div class="popup-content">
+        <div class="missed-msg">
+          <button class="close-btn" onclick="hideMissedCallPopup()">×</button>
+          <p class="mb-1 text-center">For Any Query Give Us a<br><strong>Missed Call At</strong></p>
+          <p class="mb-1 text-center">Timing – 9:30am to 6:30pm</p>
+        </div>
+        <div class="missed-phone">
+          <p class="phone-number text-center">+91 – 9484846232</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+<div class="modal fade" id="otpModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="otpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="otpModalLabel">Enter OTP</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body text-center">
+        <p class="mb-3">We’ve sent a 4-digit OTP to your phone number</p>
+        <div class="d-flex justify-content-center gap-2 mb-3">
+          <input type="text" maxlength="1" class="otp-input form-control text-center" />
+          <input type="text" maxlength="1" class="otp-input form-control text-center" />
+          <input type="text" maxlength="1" class="otp-input form-control text-center" />
+          <input type="text" maxlength="1" class="otp-input form-control text-center" />
+        </div>
+        <small class="text-muted">Didn’t receive OTP? <a href="#">Resend</a></small>
+      </div>
+
+      <div class="modal-footer border-0 justify-content-center">
+        <button type="button" class="btn btn-form-sec w-100">Verify OTP</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
