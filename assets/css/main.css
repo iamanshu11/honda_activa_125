@@ -1,7 +1,6 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
-body {}
 
 a {
   text-decoration: none;
@@ -287,7 +286,7 @@ section,
 
 .missed-call-box {
   position: fixed;
-  bottom: 20px;
+  bottom: 0px;
   right: 20px;
   background-color: #e21b22;
   color: white;
@@ -354,3 +353,11 @@ section,
     font-size: 20px;
   }
 }
+
+.missed-msg p{
+  font-size: 12px;
+  }
+  
+  .missed-phone p{
+    font-size: 14px;
+  }
